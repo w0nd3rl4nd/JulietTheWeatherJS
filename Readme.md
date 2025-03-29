@@ -10,6 +10,6 @@
 
 To use dev tools, uncomment the following line at `src/main.js`:
 
-    `window.webContents.openDevTools()`
+    window.webContents.openDevTools()
 
 *It is adviced to increment window size for readability*
