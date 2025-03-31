@@ -1,4 +1,10 @@
 import { app, BrowserWindow, ipcMain } from 'electron'
+import { fileURLToPath } from 'url';
+import path from 'node:path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const createWindow = () => {
     const window = new BrowserWindow({
         width: 500,
@@ -13,6 +19,7 @@ const createWindow = () => {
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,
+            preload: path.join(__dirname, 'preload.js')
         }
     })
 
