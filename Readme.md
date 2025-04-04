@@ -18,6 +18,7 @@
 * Timer option
 
 ## Technical unmet goals and planned changes
+* Path to config file
 * Hard code cleanup
 * Removal of configuration redundancies
 * Streamlining configuration pipeline
