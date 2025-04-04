@@ -15,7 +15,7 @@ Since this was viewed like a more creative project it was favored. It was intend
 
 You may install the [Alpha v0.1.1 Release](https://github.com/w0nd3rl4nd/JulietTheWeatherJS/releases/tag/v0.1.1-alpha) of this project on the following link, though it is not adviced.
 
-Currently, in order to be able to customise weather location, please refer to [Development Instructions](#development-instructions) in order to modify your desired location and compile into executable.
+Currently, in order to be able to customise weather location, please refer to [Development Instructions](#-development-instructions) in order to modify your desired location and compile into executable.
 
 ## 🪦​ User experience unmet goals and planned changes
 Due to time constraints, this User Experience items have been postponed:
