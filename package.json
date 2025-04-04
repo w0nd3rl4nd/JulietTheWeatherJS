@@ -1,6 +1,6 @@
 {
   "name": "juliettheweatherjs",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A little mascot for showing you the weather :)",
   "type": "module",
   "main": "src/main.js",
