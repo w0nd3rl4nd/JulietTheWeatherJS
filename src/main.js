@@ -22,7 +22,7 @@ const createWindow = () => {
     })
 
     window.loadFile('src/index.html')
-    // window.webContents.openDevTools()
+    window.webContents.openDevTools()
 } 
 
 app.whenReady().then(() => {
@@ -42,7 +42,7 @@ ipcMain.handle('getWeatherConfig', () => {
         return JSON.parse(fs.readFileSync(configPath, 'utf-8'));
     } catch (error) {
         console.error('Config error:', error);
-        return { location: { latitude: 41.4960, longitude: 2.1565 } };
+        return { location: { latitude: 41.4960, longitude: 2.1565 }, testing: true };
     }
 });
 
