@@ -22,7 +22,9 @@ const createWindow = () => {
     })
 
     window.loadFile('src/index.html')
-    window.webContents.openDevTools()
+    ipcMain.on('open-dev-tools', () => {
+        window.webContents.openDevTools();
+    });
 } 
 
 app.whenReady().then(() => {
@@ -42,7 +44,7 @@ ipcMain.handle('getWeatherConfig', () => {
         return JSON.parse(fs.readFileSync(configPath, 'utf-8'));
     } catch (error) {
         console.error('Config error:', error);
-        return { location: { latitude: 41.4960, longitude: 2.1565 }, testing: true };
+        return { location: { city: "Urithiru", latitude: 80.0000, longitude:0.0000 }, testing: true };
     }
 });
 

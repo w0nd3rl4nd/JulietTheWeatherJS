@@ -1,6 +1,7 @@
 class WeatherBox {
-    constructor(elementWeatherBox) {
+    constructor(elementWeatherBox, userConfig) {
         this.element = elementWeatherBox;
+        this.userConfig = userConfig;
     }
 
     updateWeather(weather, temperature) {
@@ -50,6 +51,10 @@ class WeatherBox {
         console.log(`Weather Update Received:
         - Type: ${weather}
         - Temperature: ${temperature}°C
+        - User config: 
+            -> City: ${this.userConfig.city}
+            -> Latitude: ${this.userConfig.latitude}
+            -> Longitude: ${this.userConfig.longitude}
         [${new Date().toLocaleTimeString()}]`);
     }
 }

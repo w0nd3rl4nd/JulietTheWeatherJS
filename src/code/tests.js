@@ -3,9 +3,13 @@ import  WeatherBox  from './weatherbox.js'
 function enableVisualTesting () {
     console.log('Loaded For Testing')
 
-    const weatherBox = new WeatherBox(document.querySelector('#weatherbox'));
+    
+    // Dummy config
+    const userConfig = { city: "Urithiru", latitude: 80.0000, longitude: 0.0000 };
 
-    // Just to have clean record of possible weather names
+    const weatherBox = new WeatherBox(document.querySelector('#weatherbox'), userConfig);
+
+    // Enum to have clean record of possible weather names
     const WEATHER_TYPES = [
         'rainy',
         'cloudy',
