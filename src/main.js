@@ -2,6 +2,11 @@ import { app, BrowserWindow, ipcMain } from 'electron'
 import path from 'path';
 import fs from 'fs';
 
+let rawIconPath = new URL('../graphic_res/icon/Rainy.ico', import.meta.url).pathname;
+if (process.platform === 'win32' && rawIconPath.startsWith('/')) {
+    rawIconPath = rawIconPath.slice(1);
+}
+
 const createWindow = () => {
     const window = new BrowserWindow({
         width: 600,
@@ -18,8 +23,8 @@ const createWindow = () => {
             contextIsolation: false,
             spellcheck: false
         },
-        icon: '../graphic_res/weather/Rainy.png'
-    })
+        icon: rawIconPath
+    });
 
     window.loadFile('src/index.html')
     ipcMain.on('open-dev-tools', () => {
