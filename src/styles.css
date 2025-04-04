@@ -98,3 +98,16 @@ body {
     background-position: center;
     background-size: contain;
 }
+
+#WIP {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    line-height: 1.5;
+    width: 80%;
+    box-sizing: border-box;
+}
