@@ -1,30 +1,24 @@
 import { app, BrowserWindow, ipcMain } from 'electron'
-import { fileURLToPath } from 'url';
-import path from 'node:path';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 const createWindow = () => {
     const window = new BrowserWindow({
-        width: 500,
-        height: 530,
+        width: 600,
+        height: 600,
         // width: 1200,
         // height:700,
         titleBarStyle: 'hidden',
-        // titleBarOverlay: true,
+        titleBarOverlay: true,
         resizable: false,
         fullscreenable: false,
         maximizable: false,
         webPreferences: {
             nodeIntegration: true,
-            contextIsolation: false,
-            preload: path.join(__dirname, 'preload.js')
+            contextIsolation: false
         }
     })
 
     window.loadFile('src/index.html')
-    // window.webContents.openDevTools()
+    window.webContents.openDevTools()
 } 
 
 app.whenReady().then(() => {
@@ -40,12 +34,4 @@ app.whenReady().then(() => {
 
 app.on("window-all-closed", () => {
     if (process.platform !== 'darwin') app.quit()
-})
-
-ipcMain.handle("minimize", () => {
-    BrowserWindow.getFocusedWindow().minimize();
-});
-
-ipcMain.handle("close", () => {
-    BrowserWindow.getFocusedWindow().destroy();
 })
